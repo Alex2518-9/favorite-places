@@ -1,11 +1,12 @@
 import 'package:favorite_places/models/place.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'dart:io';
 
 class UserPlacesNotifier extends Notifier<List<Place>> {
   UserPlacesNotifier();
 
-  void addPlace(String title) {
-    state = [...state, Place(title: title)];
+  void addPlace(String title, File image, PlaceLocation location) {
+    state = [...state, Place(title: title, image: image, location: location)];
   }
 
   @override
